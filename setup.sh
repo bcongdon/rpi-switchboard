@@ -3,14 +3,19 @@
 # Install packages
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install --upgrade python-pip
-sudo apt-get install -y npm git node python-dev
+sudo apt-get install --upgrade -y npm git node python-dev python-pip vim curl
 sudo npm install -g n
 sudo n lts
 sudo npm install -g wunderschedule forever
 
 # Fetch repos
 git clone https://github.com/bcongdon/Scripts ~/Scripts
+git clone https://github.com/bcongdon/DotVim ~/DotVim
+
+cp ~/DotVim/.vim ~/
+cp ~/DotVim/.vimrc ~/
+
+rm -rf ~/DotVim
 
 # Create startup script
 cat > ~/startup.sh <<-EOF
