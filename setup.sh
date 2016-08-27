@@ -34,7 +34,7 @@ crontab -l > mycron
 echo "@reboot . ~/startup.sh" >> mycron
 echo "59 23 * * * python ~/Scripts/mfp/mfp.py" >> mycron
 echo "59 23 * * * . ~/Scripts/youtube/scrape_history.sh" >> mycron
-echo "59 23 * * * . ~/Scripts/youtube/scrape_watch_later.sh" >> mycron
+echo "*/10 * * * * . ~/Scripts/youtube/scrape_watch_later.sh" >> mycron
 crontab mycron
 rm mycron
 
